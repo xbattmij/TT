@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+  <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <title>x.7Slots....</title>
+
+
+</head>
+
+
+<body bgcolor="black">
+<style>
+body{
+    background-image:url('7Slott.jpeg');
+    }
+.box{
+    width:360px;
+    height:650px;
+    border:1px solid black;
+}
+.playBox{
+    width:360px;
+    height:250px;
+    border:1px solid black;
+    text-align:center;
+}
+.rtBox{
+    width:282px;
+    height:80px;
+    border:1px solid black;
+    margin-left:40px;
+    margin-top:80px;
+    display:flex;
+}
+.num1{
+    width:96px;
+    height:80px;
+    text-align:center;
+    border:1px solid black;
+}
+.btn{
+    width:360px;
+    height:60px;
+    display:flex;
+}
+*{
+    color:cyan;
+    text-shadow:0px 0px 10px cyan;
+}
+button{
+    background-color:black;
+    }
+    li{
+        color:white;
+        text-shadow:0px 0px 10px white;
+        font-size:20px;
+        }
+</style>
+<div class="box">
+
+<div class="playBox">
+<a href="loginPage.html">
+<button style="position:absolute;top:35px;width:85px;height:40px;left:15px;background-color:black;color:cyan;"id="mainMenu">main menu</button></a>
+<b style="font-size:25px;padding-top:20px;">x.Slots....</b>
+<div class="rtBox">
+<div class="num1">
+<b style="font-size:60px;"id="num1">0</b>
+</div>
+<div class="num1">
+<b style="font-size:60px;"id="num2">0</b>
+</div>
+<div class="num1">
+<b style="font-size:60px;"id="num3">0</b>
+</div>
+</div>
+</div>
+<div class="btn">
+<button id="st"style="width:180px;height:60px;">start</button>
+
+<button id="rt"style="width:180px;height:60px;">reset</button>
+</div>
+<ul>
+<li>test your luck spin the row....</li>
+<br>
+<br>
+<li>make equal number on each row....</li>
+<br>
+<br>
+<li>for win=>  number=number=number....</li>
+<br>
+<br>
+<li>like , 7=7=7....</li>
+
+</div>
+<audio controls id="sn2"style="visibility:hidden;">
+  <source src="7Slotmachine.mp3">
+</audio>
+<audio controls id="sn1"style="visibility:hidden;">
+  <source src="btn.mp3">
+</audio>
+
+<script>
+let sn2=document.getElementById("sn2");
+let sn1=document.getElementById("sn1");
+let num1=document.getElementById("num1");
+let num2=document.getElementById("num2");
+let num3=document.getElementById("num3");
+st.onclick=function()
+{
+    sn2.play();
+    sn1.play();
+    st.disabled=true;
+    setTimeout(a1 , 1000);
+    setTimeout(a2 , 2000);
+    setTimeout(a3 , 3000);
+    setTimeout(my , 3500);
+    x1=setInterval(start1 , 10);
+x2=setInterval(start2 , 10);
+x3=setInterval(start3 , 10)	;
+
+}
+function my()
+{
+    let nn1=parseInt(document.getElementById("num1").innerHTML);
+    let nn2=parseInt(document.getElementById("num2").innerHTML);
+    let nn3=parseInt(document.getElementById("num3").innerHTML);
+    if(nn1==nn2&&nn2==nn3)
+    {
+        alert("you won the match....");
+    }
+    else
+    {
+        alert("you loss the match....");
+    }
+    rt.disabled =false;
+}
+rt.disabled=true;
+function a1()
+{
+    clearInterval(x1);
+}
+function a2()
+{
+    clearInterval(x2);
+}
+function a3()
+{
+    clearInterval(x3);
+}
+let x1;
+let x2;
+let x3;
+
+function start1()
+{
+    let list=[1,2,3,4,5,6,7];
+   let rnd1=Math.floor(Math.random()*list.length); num1.innerHTML=list[rnd1];
+}
+function start2()
+{
+   let list=[1,2,3,4,5,6,7];
+   let rnd2=Math.floor(Math.random()*list.length); num2.innerHTML=list[rnd2];
+}
+function start3()
+{
+   let list=[1,2,3,4,5,6,7];
+   let rnd3=Math.floor(Math.random()*list.length); num3.innerHTML=list[rnd3];
+}
+rt.onclick=function()
+{
+    sn1.play();
+    st.disabled=false;
+    rt.disabled=true;
+    num1.innerHTML =0;
+    num2.innerHTML =0;
+    num3.innerHTML =0;
+}
+</script>
+</script>
+</body>
+</html>
